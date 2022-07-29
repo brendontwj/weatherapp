@@ -17,12 +17,14 @@ public class Weather {
     
     private static final Logger logger = LoggerFactory.getLogger(Weather.class);
     private String city;
+    private String temperature;
+    public List<Conditions> conditions = new LinkedList<>();
+
 
     public void setCity(String city) {
         this.city = city;
     }
 
-    private String temperature;
     
     public String getTemperature() {
         return temperature;
@@ -32,7 +34,6 @@ public class Weather {
         this.temperature = temperature;
     }
 
-    public List<Conditions> conditions = new LinkedList<>();
 
     public List<Conditions> getConditions() {
         return conditions;

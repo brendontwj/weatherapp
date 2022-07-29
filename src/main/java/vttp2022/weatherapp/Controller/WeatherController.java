@@ -13,12 +13,12 @@ import vttp2022.weatherapp.model.Weather;
 import vttp2022.weatherapp.service.WeatherService;
 
 @Controller
-@RequestMapping(path = "/weather")
+@RequestMapping
 public class WeatherController {
     @Autowired
     private WeatherService weatherSvc;
 
-    @GetMapping
+    @GetMapping(path = "/weather")
     public String getWeather(@RequestParam(required = true) String city, Model model) {
         Optional<Weather> opt = weatherSvc.getWeather(city);
         if(opt.isEmpty()) {
